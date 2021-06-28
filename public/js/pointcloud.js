@@ -21,8 +21,8 @@ export default class PointCloudExtension extends Autodesk.Viewing.Extension {
     load() {
         console.log('Point Cloud extension loaded')
         console.log(urnModel)
-        // var container =  document.getElementById("drop-zone")
-        // window.dropzone = new DropZone(container);
+        var container =  document.getElementById("drop-zone")
+        window.dropzone = new DropZone(container);
         return true;
     }
 
