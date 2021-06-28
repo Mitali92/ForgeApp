@@ -1,0 +1,240 @@
+html, body {
+  min-height: 100%;
+  height: 100%;
+}
+
+.fill {
+  height: calc(100vh - 100px);
+}
+
+body {
+  padding-top: 60px; /* space for the top nav bar */
+  margin-right: 30px;
+}
+
+#appBuckets {
+  overflow: auto;
+  width: 100%;
+  height: calc(100vh - 150px);
+}
+
+#forgeViewer {
+  width: 100%;
+}
+
+.loadSimulationIcon{
+  background-image: url(https://github.com/encharm/Font-Awesome-SVG-PNG/raw/master/white/png/24/object-group.png);
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.pointcloudIcon {
+  background-image: url(https://github.com/encharm/Font-Awesome-SVG-PNG/raw/master/white/png/24/play-circle-o.png);
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.dataExtractIcon {
+  background-image: url(https://github.com/encharm/Font-Awesome-SVG-PNG/raw/master/white/png/24/database.png);
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.legendTitle {
+font-size: 15px;
+fill: #4F4F4F;
+font-weight: 12;
+}
+.axis path, .axis line {
+fill: none;
+stroke: none; /*black;*/
+shape-rendering: crispEdges;
+}
+.axis text {
+font-family: inherit;
+fill: #000;
+font-size: 9pt;
+}
+#legend {
+z-index: 10000;
+position: absolute;
+margin-left: 15px;
+margin-top: 5px;
+padding: 10px;
+background: rgba(255,255,255,0);
+border-radius: 2px;
+top: 7%;
+left: 45%;
+user-select: none;
+pointer-events: none;
+transform: translate(-50%,-50%);
+}
+#legend svg {
+height: 90px;
+}
+#legend svg .tick:first-child {
+text-anchor:start;
+}
+
+#legend svg .tick:last-child {
+text-anchor:end;
+}
+
+.loading-hide {
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+position: absolute;
+display: block !important;
+opacity: 0.7;
+background-color: #fff;
+z-index: 99;
+text-align: center;
+}
+
+.loading-hide {
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+position: absolute;
+display: none !important;
+opacity: 0.7;
+background-color: #fff;
+z-index: 99;
+text-align: center;
+}
+
+#loading-image {
+position: absolute;
+top: 100px;
+left: 500px;
+z-index: 100;
+}
+
+/* #file{ */
+/* display: none;
+} */
+
+/* box input files styling */
+.box-input-files .box-inner {
+  position: relative;
+  border: 2.5px dashed silver;
+  box-sizing: border-box;
+display:inline-block;
+}
+
+.box-input-files .box-inner input, 
+.box-input-files .box-inner button {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.box-input-files .box-inner i {
+  position: absolute;
+font-size: 30px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.box-input-files .box-inner label {
+position: absolute;
+  width: 100%;
+}
+
+.box-input-files > * {
+width:100%;
+}
+
+.box-input-files .box-inner {
+height:250px;
+}
+
+.box-input-files .files-container {
+  text-align: left;
+  overflow-y: auto;
+max-height:100px;
+  margin-top: 10px;
+}
+
+.box-input-files .box-inner label.top {
+  top: 60px;
+  text-align: center;
+}
+
+.box-input-files .files-container > * {
+  width: initial;
+  display: inline-block;
+  position: relative;
+  z-index: 1000;
+}
+
+.box-input-files .files-container .file {
+  margin: 3px;
+  padding: 2px;
+  border-radius: 3px;
+  border: dashed thin black;
+  cursor: pointer;
+}
+
+.box-input-files .files-container .file span {
+  font-size: 14px;
+margin-left: 4px;
+} 
+
+ /* .drop-area{
+  height: 500px;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px dashed #009578;
+  justify-content: center;
+  border-radius: 5px;
+  z-index: 5000;
+  position: absolute;
+  top: 175px;
+  left: 175px;
+  background-color: transparent;
+}
+
+.drop-area.active{
+  border: 2px solid #5256ad;
+}
+
+.drop-area .icon{
+  font-size: 100px;
+  color: #1a5ec3;
+}
+.drop-area header{
+  font-size: 30px;
+  font-weight: 500;
+  color: #5256ad;
+}
+
+.drop-area span{
+  font-size: 25px;
+  font-weight: 500;
+  color: #e21ee9;
+  margin: 10px 0px 15px 0px;
+}
+
+.drop-area button{
+  padding: 10px 25px;
+  font-size: 25px;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  background: #d6e2cd;
+  color: #5256ad;
+  cursor: pointer;
+  position: relative;
+  border-radius: 10px;
+}  */
