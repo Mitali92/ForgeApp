@@ -242,7 +242,7 @@ export default class PointCloudExtension extends Autodesk.Viewing.Extension {
 
             this._renderCloud();
             
-            //this._appearLegend();
+            this._appearLegend();
 
             var i = 0;
 
