@@ -4,9 +4,7 @@ class DataExtractExtension extends Autodesk.Viewing.Extension {
     constructor(viewer, options) {
         super(viewer, options);
         this._group = null;
-        this._button = null;
-
-        
+        this._button = null;     
     }
 
     load() {
@@ -14,7 +12,7 @@ class DataExtractExtension extends Autodesk.Viewing.Extension {
         console.log('DataExtractExtension has been loaded');
         return true;
     }
-
+  
     unload() {
         // Clean our UI elements if we added any
         if (this._group) {
@@ -40,7 +38,7 @@ class DataExtractExtension extends Autodesk.Viewing.Extension {
         this._button.onClick = (ev) => {
 
         // //single object detection
-        //const selection = this.viewer.getSelection();
+        const selection = this.viewer.getSelection();
         // this.extractObjDict(selection);
         
         //getting the id's of the material
@@ -48,8 +46,8 @@ class DataExtractExtension extends Autodesk.Viewing.Extension {
         this.extractObjDict(ids);
 
         };
-        this._button.setToolTip('Export JSON for CO2 model');
-        this._button.addClass('co2DataExtractExtensionIcon');
+        this._button.setToolTip('BIM Data Extraction');
+        this._button.addClass('dataExtractIcon');
         this._group.addControl(this._button);
 
     }
@@ -64,7 +62,7 @@ class DataExtractExtension extends Autodesk.Viewing.Extension {
                 var datas = [];
                 for(var d=0; d<elements.length; d++){
                     var category = elements[d].properties[0].displayValue;
-                    if(category == "Revit Walls" || category == "Revit Windows" || category == "Revit Doors" || category == "Revit Mechanical Equipment") { 
+                    if(category == "Revit Walls" || category == "Revit Windows" || category == "Revit Furniture"|| category == "Revit Doors" || category == "Revit Mechanical Equipment") { 
                             dataID.push(elements[d].dbId);
                              var objType = category.substring(6, category.length-1);
                              datas.push({"id": elements[d].dbId, "type": objType});
@@ -91,7 +89,7 @@ class DataExtractExtension extends Autodesk.Viewing.Extension {
             Array.prototype.push.apply(datas,arr);
             DataExtractExtension.drawcanvas(dbIDS, datas);
         }
-        viewer.search('"Chair model 01 ["', dbids => {
+        viewer.search('"Office Desk ["', dbids => {
             doneSearch(dbids)}, null, ["name"] );
     }
 
@@ -173,7 +171,7 @@ class DataExtractExtension extends Autodesk.Viewing.Extension {
              }
          }
          //console.log(intersectionData);
-         DataExtractExtension.download(JSON.stringify(intersectionData), "config.json", "application/json");
+         DataExtractExtension.download(JSON.stringify(intersectionData), "raytrace.json", "application/json");
          context.putImageData(data, 0, 0);
          canvas.style.position = 'absolute';
          canvas.style.zIndex = 100;
